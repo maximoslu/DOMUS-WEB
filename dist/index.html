@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#161616" />
+    <meta name="description" content="Portal corporativo interno de Domus Monge." />
+    <title>Domus Monge · Portal interno</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <img src="./assets/domus-monge.png" alt="Domus Monge" />
+        </div>
+        <nav aria-label="Navegación principal">
+          <a class="nav-item active" href="#inicio" data-view="inicio">
+            <span class="nav-icon">⌂</span><span>Inicio</span>
+          </a>
+          <a class="nav-item" href="#proyectos" data-view="proyectos">
+            <span class="nav-icon">◇</span><span>Proyectos</span>
+          </a>
+          <a class="nav-item" href="#documentos" data-view="documentos">
+            <span class="nav-icon">▤</span><span>Documentos</span>
+          </a>
+          <a class="nav-item" href="#contabilidad" data-view="contabilidad">
+            <span class="nav-icon">◫</span><span>Contabilidad</span>
+          </a>
+          <a class="nav-item" href="#equipo" data-view="equipo">
+            <span class="nav-icon">◎</span><span>Equipo</span>
+          </a>
+        </nav>
+        <div class="sidebar-footer">
+          <p>Portal corporativo</p>
+          <span><i></i> Acceso interno</span>
+        </div>
+      </aside>
+
+      <div class="content-shell">
+        <header class="topbar">
+          <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-expanded="false">☰</button>
+          <div class="page-heading">
+            <span class="eyebrow">DOMUS MONGE</span>
+            <h1 id="pageTitle">Panel de inicio</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="searchButton" aria-label="Buscar">⌕</button>
+            <div class="profile" aria-label="Perfil de usuario">
+              <span class="avatar">DM</span>
+              <span class="profile-copy"><strong>Equipo Domus</strong><small>Área interna</small></span>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+          <section class="view active" id="inicio" aria-labelledby="welcomeTitle">
+            <div class="welcome-card">
+              <div>
+                <span class="eyebrow light">RESUMEN DIARIO</span>
+                <h2 id="welcomeTitle">Buenos días, equipo.</h2>
+                <p>Todo lo importante de Domus Monge, reunido en un único espacio.</p>
+              </div>
+              <div class="date-card"><strong id="currentDay">05</strong><span id="currentMonth">NOV</span></div>
+            </div>
+
+            <div class="section-heading">
+              <div><span class="eyebrow">ACCESOS DIRECTOS</span><h2>Áreas de trabajo</h2></div>
+            </div>
+            <div class="module-grid">
+              <button class="module-card" data-target="proyectos">
+                <span class="module-index">01</span><span class="module-icon warm">◇</span>
+                <strong>Proyectos</strong><small>Seguimiento y planificación</small><span class="arrow">→</span>
+              </button>
+              <button class="module-card" data-target="documentos">
+                <span class="module-index">02</span><span class="module-icon">▤</span>
+                <strong>Documentos</strong><small>Archivo corporativo</small><span class="arrow">→</span>
+              </button>
+              <button class="module-card" data-target="contabilidad">
+                <span class="module-index">03</span><span class="module-icon">◫</span>
+                <strong>Contabilidad</strong><small>Control administrativo</small><span class="arrow">→</span>
+              </button>
+              <button class="module-card" data-target="equipo">
+                <span class="module-index">04</span><span class="module-icon">◎</span>
+                <strong>Equipo</strong><small>Contactos y responsabilidades</small><span class="arrow">→</span>
+              </button>
+            </div>
+
+            <div class="dashboard-grid">
+              <section class="panel tasks-panel">
+                <div class="panel-heading"><div><span class="eyebrow">ORGANIZACIÓN</span><h2>Tareas rápidas</h2></div><span class="count" id="taskCount">0 pendientes</span></div>
+                <form class="task-form" id="taskForm">
+                  <label class="sr-only" for="taskInput">Nueva tarea</label>
+                  <input id="taskInput" maxlength="90" placeholder="Añadir una tarea…" autocomplete="off" />
+                  <button type="submit">Añadir</button>
+                </form>
+                <ul class="task-list" id="taskList"></ul>
+              </section>
+              <aside class="panel notice-panel">
+                <span class="eyebrow">COMUNICACIÓN</span><h2>Tablón interno</h2>
+                <div class="notice"><span class="notice-date">HOY</span><div><strong>Portal interno disponible</strong><p>Esta primera versión centraliza los accesos de Domus Monge.</p></div></div>
+                <div class="notice muted"><span class="notice-date">INFO</span><div><strong>Próxima fase</strong><p>Conectaremos documentos, proyectos y datos reales.</p></div></div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="view" id="proyectos">
+            <div class="empty-state"><span class="empty-icon">◇</span><span class="eyebrow">PROYECTOS</span><h2>El espacio de proyectos está listo</h2><p>Aquí se mostrarán las obras, hitos, responsables y próximos vencimientos cuando conectemos la fuente de datos.</p><button class="primary-action" data-toast="La creación de proyectos estará disponible en la siguiente fase.">Nuevo proyecto</button></div>
+          </section>
+          <section class="view" id="documentos">
+            <div class="empty-state"><span class="empty-icon">▤</span><span class="eyebrow">DOCUMENTOS</span><h2>Archivo corporativo</h2><p>Un acceso único para contratos, presupuestos, planos y documentación administrativa.</p><button class="primary-action" data-toast="La conexión con el archivo corporativo se configurará en la siguiente fase.">Conectar archivo</button></div>
+          </section>
+          <section class="view" id="contabilidad">
+            <div class="empty-state"><span class="empty-icon">◫</span><span class="eyebrow">CONTABILIDAD</span><h2>Control económico centralizado</h2><p>Este módulo podrá reunir facturas, cobros, pagos y resúmenes de gestión.</p><button class="primary-action" data-toast="El panel contable se conectará en la siguiente fase.">Configurar módulo</button></div>
+          </section>
+          <section class="view" id="equipo">
+            <div class="empty-state"><span class="empty-icon">◎</span><span class="eyebrow">EQUIPO</span><h2>Directorio de Domus Monge</h2><p>Contactos, funciones y responsables estarán disponibles en este espacio.</p><button class="primary-action" data-toast="El directorio se habilitará cuando añadamos los miembros del equipo.">Añadir miembro</button></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="search-overlay" id="searchOverlay" hidden>
+      <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+        <div class="search-head"><h2 id="searchTitle">Buscar en el portal</h2><button id="closeSearch" aria-label="Cerrar">×</button></div>
+        <input id="globalSearch" placeholder="Escribe proyectos, documentos, contabilidad…" autofocus />
+        <div class="search-results" id="searchResults"><p>Empieza a escribir para encontrar un área.</p></div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
